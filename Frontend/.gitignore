@@ -1,0 +1,8 @@
+node_modules
+*.log
+*.testcase
+test
+output
+codecept.json
+.vscode
+package-lock.json

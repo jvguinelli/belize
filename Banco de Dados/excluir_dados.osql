@@ -1,0 +1,7 @@
+DELETE VERTEX Canal
+DELETE VERTEX MensagemParaCanal 
+DELETE VERTEX MensagemParaUsuario
+DELETE VERTEX Mensagem  
+DELETE VERTEX Organizacao
+DELETE VERTEX Usuario
+DELETE VERTEX Workspace

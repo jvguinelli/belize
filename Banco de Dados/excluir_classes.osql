@@ -1,0 +1,18 @@
+DROP CLASS Canal
+DROP CLASS MensagemParaCanal 
+DROP CLASS MensagemParaUsuario
+DROP CLASS Mensagem  
+DROP CLASS Organizacao
+DROP CLASS Usuario
+DROP CLASS Workspace
+
+DROP CLASS EhMembro
+DROP CLASS EhParceira
+DROP CLASS EhRespostaA
+DROP CLASS EnviadaPara
+DROP CLASS EnviadaPor
+DROP CLASS FazParte
+DROP CLASS Participa
+DROP CLASS Possui
+DROP CLASS ReageA
+DROP CLASS Trabalha

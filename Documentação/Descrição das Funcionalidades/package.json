@@ -1,0 +1,26 @@
+{
+	"name": "testes",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"directories": {
+		"test": "test"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"concordia:codeceptjs": "codeceptjs run --reporter mocha-multi --colors || echo ."
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"codeceptjs": "^1.3.3",
+		"codeceptjs-cmdhelper": "^2.2.0",
+		"codeceptjs-dbhelper": "^1.0.0",
+		"database-js": "^3.0.8",
+		"database-js-json": "^1.2.1",
+		"mocha": "^5.2.0",
+		"mocha-multi": "^1.0.1"
+	},
+	"dependencies": {}
+}

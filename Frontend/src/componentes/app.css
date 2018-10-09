@@ -1,0 +1,222 @@
+.densidade {
+    position: fixed;
+}
+.maior{
+    width: 11.6%;
+}
+
+.menu {
+    z-index: 10;
+}
+
+.wrapper{
+    box-sizing: border-box;
+    height: 100vh;
+    margin-top: -45px !important;
+    padding-top: 45px !important;
+    padding-bottom: 0px !important;
+    position: static !important;
+    overflow: hidden;
+}
+
+.grafo{
+    box-sizing: border-box;
+    height: 85vh;
+    margin-top: -45px !important;
+    padding-top: 45px !important;
+    padding-bottom: 0px !important;
+    position: static !important;
+    overflow: hidden;
+}
+
+.div-100 {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.div-85 {
+    box-sizing: border-box;
+    height: 85%;
+}
+
+.no-x-scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.no-padding-top {
+    padding-top: 0px !important;
+}
+
+.no-padding-right {
+    padding-right: 0px !important;
+}
+
+.no-padding-left {
+    padding-left: 0px !important;
+}
+
+.area-comunicacao {
+    margin-bottom: -45px;
+    padding-bottom: 47px;
+    /* background-color: blueviolet; */
+}
+
+.area-comunicacao-resposta {
+    margin-bottom: -79px;
+    padding-bottom: 79px;
+    /* background-color: blueviolet; */
+}
+
+.area-mensagem {
+    margin-top: -40px;
+    padding-top: 40px;
+    /* background-color: red; */
+}
+
+.area-comunicacao-header {
+    height: 40px;
+    /* background-color: yellowgreen; */
+}
+
+.area-comunicacao-form {
+    /* background-color: green; */
+}
+
+.mensagens {
+    border-top: 1px solid silver;
+    /* background-color: orange; */
+    /* overflow: auto; */
+}
+
+.ui.label {
+    background-color: inherit !important;
+    padding: 0em 0em !important;
+    color: inherit !important;
+}
+
+.none {
+    display: none;
+}
+
+.teste {
+    position: absolute;
+}
+
+
+
+/*
+.area-comunicacao-header {
+    background-color: yellowgreen;
+}
+
+.area-mensagem {
+    box-sizing: border-box;
+    height: 100%;
+    margin-bottom: -85px;
+    margin-top: -56px;
+    padding-bottom: 85px;
+    padding-top: 56px;
+    background-color: red;
+}
+
+.mensagens {
+    box-sizing: border-box;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.area-comunicacao-form {
+    background-color: green;
+} 
+
+*/
+
+/* .wrapper {
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
+    padding: 56px 0 0px 260px;
+    width: 100vw;
+}
+
+.menu {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+
+.sidebar {
+    background: #f6f6f6;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px;
+    position: absolute;
+    top: 56px;
+    width: 260px;
+}
+
+.body {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+}
+
+.body-with-header {
+    padding-top: 56px;
+}
+
+.message-sender {
+    background: #f6f6f6;
+    bottom: 0;
+    left: 260px;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+}
+
+.div-100 {
+    height: 100%;
+    width: 100%;
+}
+
+.message-sender textarea {
+    height: 75px;
+    width: max-content;
+    resize: none;
+}
+
+.sticky {
+    background: #f6f6f6;
+    left: 0;
+    margin: 0;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+} */
+
+
+::-webkit-scrollbar-button{ 
+    display: none !important; 
+    height: 13px !important; 
+    border-radius: 0px !important; 
+    background-color: #AAA !important; 
+} 
+::-webkit-scrollbar-button:hover{ background-color: #AAA !important; } 
+::-webkit-scrollbar-thumb{ background-color: #858585 !important; border-radius: 500px !important; } 
+::-webkit-scrollbar-thumb:hover{ background-color: #434040 !important; } 
+::-webkit-scrollbar-track{ background-color: #efefef !important; } 
+::-webkit-scrollbar-track:hover{ background-color: #CCC !important; } 
+::-webkit-scrollbar{ width: 3px !important; }

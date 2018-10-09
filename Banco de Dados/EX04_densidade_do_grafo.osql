@@ -1,0 +1,212 @@
+SCRIPT SQL
+BEGIN
+LET w1 = CREATE VERTEX Workspace SET nome="workspace_cefet_rj", descricao="Workspace para testes.", v=1
+
+LET u1 = CREATE VERTEX Usuario SET nome="João", sobrenome="Silva", email="jvguinelli@gmail.com", senha="1234", img="http://0.0.0.0:5000/static/img/perfil.png", v=1
+LET u2 = CREATE VERTEX Usuario SET nome="Fulano", sobrenome="de Tal", email="fulano@gmail.com", senha="1234", img="http://0.0.0.0:5000/static/img/perfil.png", v=1
+
+LET c1 = CREATE VERTEX Canal SET nome="Canal_01", descricao="Canal para testes.", v=1
+
+LET m1 = CREATE VERTEX MensagemParaCanal SET texto="Olá, João Victor Guinelli!", data_hora_envio=Date(), v=1
+LET m2 = CREATE VERTEX MensagemParaCanal SET texto="Bom dia, tudo bem! E vc?", data_hora_envio=Date(), v=1
+
+LET i1 = CREATE VERTEX Organizacao SET nome="Incubadora 01", descricao="Incubadora de teste.", tipo="Incubadora", v=1
+LET i2 = CREATE VERTEX Organizacao SET nome="Incubadora 02", descricao="Incubadora de teste.", tipo="Incubadora", v=1
+LET i3 = CREATE VERTEX Organizacao SET nome="Incubadora 03", descricao="Incubadora de teste.", tipo="Incubadora", v=1
+
+LET uni1 = CREATE VERTEX Organizacao SET nome="Universidade 01", descricao="Universidade de teste.", tipo="Universidade", v=1
+LET uni2 = CREATE VERTEX Organizacao SET nome="Universidade 02", descricao="Universidade de teste.", tipo="Universidade", v=1
+LET uni3 = CREATE VERTEX Organizacao SET nome="Universidade 03", descricao="Universidade de teste.", tipo="Universidade", v=1
+
+LET e1 = CREATE VERTEX Organizacao SET nome="Empresa 01", descricao="Empresa de teste.", tipo="Empresa", v=1
+LET e2 = CREATE VERTEX Organizacao SET nome="Empresa 02", descricao="Empresa de teste.", tipo="Empresa", v=1
+LET e3 = CREATE VERTEX Organizacao SET nome="Empresa 03", descricao="Empresa de teste.", tipo="Empresa", v=1
+LET e4 = CREATE VERTEX Organizacao SET nome="Empresa 04", descricao="Empresa de teste.", tipo="Empresa", v=1
+LET e5 = CREATE VERTEX Organizacao SET nome="Empresa 05", descricao="Empresa de teste.", tipo="Empresa", v=1
+
+LET s1 = CREATE VERTEX Organizacao SET nome="Startup 01", descricao="Startup de teste.", tipo="Startup", v=1
+LET s2 = CREATE VERTEX Organizacao SET nome="Startup 02", descricao="Startup de teste.", tipo="Startup", v=1
+LET s3 = CREATE VERTEX Organizacao SET nome="Startup 03", descricao="Startup de teste.", tipo="Startup", v=1
+LET s4 = CREATE VERTEX Organizacao SET nome="Startup 04", descricao="Startup de teste.", tipo="Startup", v=1
+LET s5 = CREATE VERTEX Organizacao SET nome="Startup 05", descricao="Startup de teste.", tipo="Startup", v=1
+LET s6 = CREATE VERTEX Organizacao SET nome="Startup 06", descricao="Startup de teste.", tipo="Startup", v=1
+LET s7 = CREATE VERTEX Organizacao SET nome="Startup 07", descricao="Startup de teste.", tipo="Startup", v=1
+LET s8 = CREATE VERTEX Organizacao SET nome="Startup 08", descricao="Startup de teste.", tipo="Startup", v=1
+LET s9 = CREATE VERTEX Organizacao SET nome="Startup 09", descricao="Startup de teste.", tipo="Startup", v=1
+LET s10 = CREATE VERTEX Organizacao SET nome="Startup 10", descricao="Startup de teste.", tipo="Startup", v=1
+LET s11 = CREATE VERTEX Organizacao SET nome="Startup 11", descricao="Startup de teste.", tipo="Startup", v=1
+LET s12 = CREATE VERTEX Organizacao SET nome="Startup 12", descricao="Startup de teste.", tipo="Startup", v=1
+LET s13 = CREATE VERTEX Organizacao SET nome="Startup 13", descricao="Startup de teste.", tipo="Startup", v=1
+LET s14 = CREATE VERTEX Organizacao SET nome="Startup 14", descricao="Startup de teste.", tipo="Startup", v=1
+LET s15 = CREATE VERTEX Organizacao SET nome="Startup 15", descricao="Startup de teste.", tipo="Startup", v=1
+LET s16 = CREATE VERTEX Organizacao SET nome="Startup do Guinelli", descricao="Startup de teste.", tipo="Startup", v=1
+
+CREATE EDGE EhMembro FROM $u1 TO $w1 SET data_de_entrada=Date(), eh_dono=1, v=1
+CREATE EDGE EhMembro FROM $u2 TO $w1 SET data_de_entrada=Date(), eh_dono=0, v=1
+
+CREATE EDGE FazParte FROM $c1 TO $w1 SET v=1
+
+CREATE EDGE Participa FROM $u1 TO $c1 SET data_de_entrada=Date(), data_hora_ultima_visualizacao=Date(), eh_adm=1, v=1
+CREATE EDGE Participa FROM $u2 TO $c1 SET data_de_entrada=Date(), data_hora_ultima_visualizacao=Date(), eh_adm=0, v=1
+
+CREATE EDGE Possui FROM $c1 TO $m1 SET v=1
+CREATE EDGE Possui FROM $c1 TO $m2 SET v=1
+
+CREATE EDGE EnviadaPor FROM $m1 TO $u2 SET v=1
+CREATE EDGE EnviadaPor FROM $m2 TO $u1 SET v=1
+
+CREATE EDGE ReageA FROM $u1 TO $m1 SET tipo="1", v=1
+
+CREATE EDGE EhRespostaA FROM $m2 TO $m1 SET v=1
+
+CREATE EDGE Trabalha FROM $u1 TO $s16 SET cargo="Gerente", data_inicio=DATE(), v=1
+CREATE EDGE Trabalha FROM $u2 TO $s1 SET cargo="Gerente", data_inicio=DATE(), v=1
+
+CREATE EDGE EhParceira FROM $i1 TO $s1 SET v=1 
+CREATE EDGE EhParceira FROM $i1 TO $s2 SET v=1 
+CREATE EDGE EhParceira FROM $i1 TO $s3 SET v=1 
+CREATE EDGE EhParceira FROM $i1 TO $s4 SET v=1 
+CREATE EDGE EhParceira FROM $i1 TO $s5 SET v=1 
+CREATE EDGE EhParceira FROM $i2 TO $s6 SET v=1 
+CREATE EDGE EhParceira FROM $i2 TO $s7 SET v=1 
+CREATE EDGE EhParceira FROM $i2 TO $s8 SET v=1 
+CREATE EDGE EhParceira FROM $i2 TO $s9 SET v=1
+CREATE EDGE EhParceira FROM $i2 TO $s10 SET v=1 
+CREATE EDGE EhParceira FROM $i3 TO $s11 SET v=1 
+CREATE EDGE EhParceira FROM $i3 TO $s12 SET v=1 
+CREATE EDGE EhParceira FROM $i3 TO $s13 SET v=1 
+CREATE EDGE EhParceira FROM $i3 TO $s14 SET v=1 
+CREATE EDGE EhParceira FROM $i3 TO $s15 SET v=1
+
+CREATE EDGE EhParceira FROM $i1 TO $uni1 SET v=1 
+CREATE EDGE EhParceira FROM $i1 TO $uni2 SET v=1 
+CREATE EDGE EhParceira FROM $i1 TO $uni3 SET v=1 
+CREATE EDGE EhParceira FROM $i2 TO $uni1 SET v=1 
+CREATE EDGE EhParceira FROM $i2 TO $uni2 SET v=1 
+CREATE EDGE EhParceira FROM $i2 TO $uni3 SET v=1 
+CREATE EDGE EhParceira FROM $i3 TO $uni1 SET v=1 
+CREATE EDGE EhParceira FROM $i3 TO $uni2 SET v=1 
+CREATE EDGE EhParceira FROM $i3 TO $uni3 SET v=1
+
+CREATE EDGE EhParceira FROM $i1 TO $e1 SET v=1
+CREATE EDGE EhParceira FROM $i2 TO $e2 SET v=1
+CREATE EDGE EhParceira FROM $i3 TO $e3 SET v=1
+CREATE EDGE EhParceira FROM $i1 TO $e4 SET v=1
+CREATE EDGE EhParceira FROM $i2 TO $e5 SET v=1
+CREATE EDGE EhParceira FROM $i3 TO $e5 SET v=1 
+
+CREATE EDGE EhParceira FROM $uni1 TO $e1 SET v=1
+CREATE EDGE EhParceira FROM $uni1 TO $e5 SET v=1
+CREATE EDGE EhParceira FROM $uni2 TO $e5 SET v=1 
+CREATE EDGE EhParceira FROM $uni3 TO $e3 SET v=1 
+CREATE EDGE EhParceira FROM $uni3 TO $e5 SET v=1
+
+CREATE EDGE EhParceira FROM $uni1 TO $s1 SET v=1 
+CREATE EDGE EhParceira FROM $uni1 TO $s5 SET v=1 
+CREATE EDGE EhParceira FROM $uni3 TO $s10 SET v=1 
+CREATE EDGE EhParceira FROM $uni3 TO $s11 SET v=1 
+CREATE EDGE EhParceira FROM $uni3 TO $s12 SET v=1 
+CREATE EDGE EhParceira FROM $uni3 TO $s13 SET v=1
+
+CREATE EDGE EhParceira FROM $e1 TO $s1 SET v=1 
+CREATE EDGE EhParceira FROM $e1 TO $s2 SET v=1 
+CREATE EDGE EhParceira FROM $e2 TO $s7 SET v=1 
+CREATE EDGE EhParceira FROM $e2 TO $s8 SET v=1 
+CREATE EDGE EhParceira FROM $e2 TO $s9 SET v=1 
+CREATE EDGE EhParceira FROM $e3 TO $s11 SET v=1 
+CREATE EDGE EhParceira FROM $e3 TO $s12 SET v=1 
+CREATE EDGE EhParceira FROM $e3 TO $s13 SET v=1 
+CREATE EDGE EhParceira FROM $e3 TO $s14 SET v=1 
+CREATE EDGE EhParceira FROM $e3 TO $s15 SET v=1
+CREATE EDGE EhParceira FROM $e4 TO $s11 SET v=1 
+CREATE EDGE EhParceira FROM $e4 TO $s12 SET v=1 
+CREATE EDGE EhParceira FROM $e4 TO $s13 SET v=1 
+CREATE EDGE EhParceira FROM $e5 TO $s1 SET v=1 
+CREATE EDGE EhParceira FROM $e5 TO $s2 SET v=1
+CREATE EDGE EhParceira FROM $e5 TO $s5 SET v=1 
+CREATE EDGE EhParceira FROM $e5 TO $s7 SET v=1 
+CREATE EDGE EhParceira FROM $e5 TO $s9 SET v=1 
+CREATE EDGE EhParceira FROM $e5 TO $s14 SET v=1 
+CREATE EDGE EhParceira FROM $e5 TO $s15 SET v=1
+
+CREATE EDGE EhParceira FROM $s1 TO $e2 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s3 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s4 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s5 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s6 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s7 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s8 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s9 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s10 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s11 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s12 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s13 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s14 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s15 SET v=1
+CREATE EDGE EhParceira FROM $s1 TO $s16 SET v=1
+
+CREATE EDGE EhParceira FROM $s2 TO $s1 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s3 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s4 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s5 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s6 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s7 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s8 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s9 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s10 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s11 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s12 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s13 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s14 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s15 SET v=1
+CREATE EDGE EhParceira FROM $s2 TO $s16 SET v=1
+
+CREATE EDGE EhParceira FROM $s3 TO $s1 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s2 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s4 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s5 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s6 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s7 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s8 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s9 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s10 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s11 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s12 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s13 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s14 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s15 SET v=1
+CREATE EDGE EhParceira FROM $s3 TO $s16 SET v=1
+
+CREATE EDGE EhParceira FROM $s4 TO $s1 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s2 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s3 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s5 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s6 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s7 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s8 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s9 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s10 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s11 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s12 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s13 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s14 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s15 SET v=1
+CREATE EDGE EhParceira FROM $s4 TO $s16 SET v=1
+
+CREATE EDGE EhParceira FROM $s16 TO $s1 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s2 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s3 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s4 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s5 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s6 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s7 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s8 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s9 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s10 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s11 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s12 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s13 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s14 SET v=1
+CREATE EDGE EhParceira FROM $s16 TO $s15 SET v=1
+
+COMMIT RETRY 5
